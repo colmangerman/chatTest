@@ -1,0 +1,31 @@
+
+.message-box {
+  border: solid 1 black !important;
+  float: right;
+  width: 80%;
+  height: 100%;
+  padding-top: 1em;
+}
+
+.input-send {
+  bottom: 0px;
+  float: right;
+  width: 100%;
+  padding-top: 1em;
+}
+
+.creator {
+  float: right;
+}
+
+.card-message {
+  padding-bottom: 1em;
+}
+
+.card-message-right {
+  float: right;
+}
+
+.card-message-left {
+  float: left;
+}

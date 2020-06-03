@@ -1,0 +1,12 @@
+<div class="message-box">
+  <div class="card card-message" [class]="message.class" *ngFor="let msj of messages" style="width: 18rem;">
+    <div class="card-body">
+      <label class="creator">{{msj.creator}}</label><br>
+      <p class="card-text">{{msj.message}}</p>
+    </div>
+  </div>
+  <div class="input-send">
+    <input type="text" style="width: 80%; margin-right: 1em;" [(ngModel)]="message.message" />
+    <button (click)="send()">Send</button>
+  </div>
+</div>

@@ -1,17 +1,17 @@
 
 .message-box {
-  border: solid 1 black !important;
   float: right;
-  width: 80%;
+  width: 90%;
   height: 100%;
   padding-top: 1em;
+  overflow-y: scroll;
 }
 
 .input-send {
-  bottom: 0px;
-  float: right;
-  width: 100%;
+  bottom: 0;
+  width: 50%;
   padding-top: 1em;
+  padding-left: 2em;
 }
 
 .creator {
@@ -19,7 +19,9 @@
 }
 
 .card-message {
-  padding-bottom: 1em;
+  margin-bottom: 0.5em;
+  width: 25%;
+  border: solid 1px black;
 }
 
 .card-message-right {

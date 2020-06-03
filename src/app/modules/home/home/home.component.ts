@@ -1,5 +1,5 @@
 import { MessageService } from './../../../services/message/message.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Message } from 'src/app/model/message';
 
 @Component({
@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
   messages: Message[];
   message: Message;
+  @ViewChild('input') inputElement: ElementRef;
 
   constructor(
     private messageService: MessageService
@@ -27,12 +28,13 @@ export class HomeComponent implements OnInit {
 
   response() {
     this.messages.push(this.messageService.getResponse());
+    this.inputElement.nativeElement.focus();
   }
 
   send() {
     if (this.message.message.trim() !== '') {
       this.message.creator = 'User';
-      this.message.class = 'card-message-right';
+      this.message.class = 'card card-message card-message-right';
       this.messages.push(this.message);
       this.message = new Message();
       this.response();

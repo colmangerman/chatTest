@@ -16,8 +16,8 @@ export class MessageService {
 
   private selectResponse(): Message {
     const message = new Message();
-    message.class = 'card-message-left';
-    const select = new Random().getRandomNumber(1, Object.keys(LevelEnum).length - 1);
+    message.class = 'card card-message card-message-left';
+    const select = new Random().getRandomNumber(1, Object.keys(LevelEnum).length / 2);
     switch (select) {
       case LevelEnum.Operador:
         message.creator = 'Operador';

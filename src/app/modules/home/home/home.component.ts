@@ -27,14 +27,19 @@ export class HomeComponent implements OnInit {
   }
 
   response() {
-    this.messages.push(this.messageService.getResponse());
-    this.inputElement.nativeElement.focus();
+    this.messageService.getResponse().subscribe(
+      message => {
+        console.log(message);
+        this.messages.push(message);
+        this.inputElement.nativeElement.focus();
+      }
+    );
+
   }
 
   send() {
-    if (this.message.message.trim() !== '') {
-      this.message.creator = 'User';
-      this.message.class = 'card card-message card-message-right';
+    if (this.message.Body.trim() !== '') {
+      this.message.Creator = 'User';
       this.messages.push(this.message);
       this.message = new Message();
       this.response();

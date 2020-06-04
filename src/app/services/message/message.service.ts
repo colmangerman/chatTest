@@ -1,38 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Random } from './../../helpers/random';
 import { Message } from './../../model/message';
 import { Injectable } from '@angular/core';
 import { LevelEnum } from 'src/app/helpers/levelEnum';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
 
-  constructor() { }
+  url = 'https://localhost:44344';
 
-  getResponse(): Message {
-    return this.selectResponse();
-  }
+  constructor(private http: HttpClient) { }
 
-  private selectResponse(): Message {
-    const message = new Message();
-    message.class = 'card card-message card-message-left';
-    const select = new Random().getRandomNumber(1, Object.keys(LevelEnum).length / 2);
-    switch (select) {
-      case LevelEnum.Operador:
-        message.creator = 'Operador';
-        message.message = 'Hola, soy el operador en que puedo ayudarle.';
-        break;
-      case LevelEnum.Supervisor:
-        message.creator = 'Supervisor';
-        message.message = 'Hola, soy el supervisor en que puedo ayudarle.';
-        break;
-      case LevelEnum.Gerente:
-        message.creator = 'Gerente';
-        message.message = 'Hola, soy el gerente en que puedo ayudarle.';
-        break;
-    }
-    return message;
+  getResponse(): Observable<Message> {
+    return this.http.post<Message>(this.url + '/Message/Response', null);
   }
 
 }

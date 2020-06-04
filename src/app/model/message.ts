@@ -1,11 +1,10 @@
 
 export class Message {
-  message: string;
-  creator: string;
-  class: string;
+  Body: string;
+  Creator: string;
 
   constructor() {
-    this.message = '';
+    this.Body = '';
   }
 
 }

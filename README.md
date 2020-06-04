@@ -1,6 +1,10 @@
 # ChatTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+Este proyecto se desarrollo usando Angular 9. Es la vista web que se conecta al proyecto chatTest-be (https://github.com/chaba87/chatTest-be)
+
+ATENCION! para realizar la conexion con dicho backend se debe ejecutar la solucion provista en el link anterior y reemplazar en el archivo "chatTest/src/app/services/message/message.service.ts" la variable "url" por la url donde se ejecuta el backend.
+
+Una vez ejecutada la aplicacion angular se vera una sencilla vista con un input donde puede ingresarse texto y al presionar "send" se envia el mensaje, lo que hara el llamado al backend para solicitar una respuesta y mostrarla en pantalla.
 
 ## Development server
 
